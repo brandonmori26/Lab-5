@@ -1,11 +1,9 @@
-
 #include "mbed.h"
 #include "arm_book_lib.h"
 
 #define PERIOD 0.02
 #define DUTY_MIN 0.025
 #define DUTY_MAX 0.115
-
 #define DELAY_SECONDS 3000
 
 PwmOut servo(PF_9); 
@@ -18,7 +16,6 @@ void PwmInit()
 {
     servo.period(PERIOD);
     PwmMin();
-
 }
 
 void PwmMax()
@@ -29,4 +26,17 @@ void PwmMax()
 void PwmMin()
 {
     servo.write(DUTY_MIN);
+}
+
+int main() 
+{
+    PwmInit();  // Initialize PWM with minimum duty cycle
+    
+    while(1) {
+        PwmMin();                    // Set to minimum position
+        wait_ms(DELAY_SECONDS);      // Wait for 3 seconds
+        
+        PwmMax();                    // Set to maximum position
+        wait_ms(DELAY_SECONDS);      // Wait for 3 seconds
+    }
 }
