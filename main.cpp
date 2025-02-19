@@ -30,13 +30,13 @@ void PwmMin()
 
 int main() 
 {
-    PwmInit();  // Initialize PWM with minimum duty cycle
+    PwmInit();  
     
-    while(1) {
+    while(true) {
         PwmMin();                    // Set to minimum position
-        wait_ms(DELAY_SECONDS);      // Wait for 3 seconds
+        wait_ms(DELAY_SECONDS);      
         
         PwmMax();                    // Set to maximum position
-        wait_ms(DELAY_SECONDS);      // Wait for 3 seconds
+        wait_ms(DELAY_SECONDS);      
     }
 }
