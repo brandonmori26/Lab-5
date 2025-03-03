@@ -1,5 +1,6 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
+#include "ldr.h"
 
 #define PERIOD 0.02
 #define DUTY_MIN 0.025
